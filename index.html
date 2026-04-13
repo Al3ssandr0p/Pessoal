@@ -57,20 +57,6 @@
       object-fit: cover;
       margin-bottom: 15px;
       box-shadow: 0 0 25px rgba(0,255,136,0.6);
-      transition: 0.3s;
-      cursor: pointer;
-      position: relative;
-    }
-
-    /* Efeito Stories */
-    
-
-    
-      100% { transform: rotate(360deg); }
-    }
-
-    .profile-img:hover {
-      transform: scale(1.05);
     }
 
     h1, h2 {
@@ -96,7 +82,6 @@
     }
 
     .btn {
-      position: relative;
       display: flex;
       align-items: center;
       justify-content: flex-start;
@@ -111,6 +96,7 @@
       text-transform: uppercase;
       box-shadow: 0 8px 20px rgba(0,255,136,0.3);
       transition: 0.3s;
+      position: relative;
       overflow: hidden;
     }
 
@@ -119,23 +105,18 @@
       min-width: 20px;
     }
 
-    /* Efeito vidro + hover */
     .btn:hover {
       background: rgba(255, 255, 255, 0.1);
       color: #fff;
       border: 1px solid rgba(255,255,255,0.2);
       backdrop-filter: blur(10px);
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 12px 25px rgba(0,255,136,0.3);
     }
 
-    /* Efeito clique */
     .btn:active {
       transform: scale(0.97);
-      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
     }
 
-    /* Luz passando */
     .btn::before {
       content: '';
       position: absolute;
@@ -175,7 +156,7 @@
 <body>
   <div class="container">
 
-    <img src="https://yt3.googleusercontent.com/ioNCpb6Bnv0ONnFAwPRjMiyZzqP0988Lx3Wxexnx9VDFrP9rlWF5FMSO6g21qobGqqplpWI-xw=s900-c-k-c0x00ffffff-no-rj" alt="Foto" class="profile-img">
+    <img src="https://yt3.googleusercontent.com/ioNCpb6Bnv0ONnFAwPRjMiyZzqP0988Lx3Wxexnx9VDFrP9rlWF5FMSO6g21qobGqqplpWI-xw=s900-c-k-c0x00ffffff-no-rj" class="profile-img">
 
     <h1>Ewerton Renato</h1>
     <h2>Contabilidade</h2>
@@ -197,19 +178,30 @@
       <i class="fab fa-youtube"></i> CONTEÚDOS E DICAS
     </a>
 
-    <div class="footer">© 2026 - Ewerton Renato</div>
-  
-
-    <!-- BOX DO VÍDEO -->
+    <!-- VIDEO DINÂMICO -->
     <div class="video-box">
-      <iframe 
-  src="https://www.youtube.com/embed/ABC123XYZ?autoplay=1&mute=1&controls=0&loop=1&playlist=ABC123XYZ"
-  frameborder="0"
-  allow="autoplay; encrypted-media"
-  allowfullscreen>
-</iframe>
+      <iframe id="yt-video"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
     </div>
 
+    <div class="footer">© 2026 - Ewerton Renato</div>
+
   </div>
+
+  <script>
+    const videos = [
+      "dQw4w9WgXcQ",
+      "3JZ_D3ELwOQ",
+      "kxopViU98Xo"
+    ];
+
+    const randomVideo = videos[Math.floor(Math.random() * videos.length)];
+
+    document.getElementById("yt-video").src =
+      `https://www.youtube.com/embed/${randomVideo}?autoplay=1&mute=1&controls=0&loop=1&playlist=${randomVideo}`;
+  </script>
+
 </body>
 </html>
