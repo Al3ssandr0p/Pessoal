@@ -20,10 +20,11 @@
     }
 
     body {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
       background: linear-gradient(-45deg, #0f2027, #203a43, #0a0f1c, #1a2f3a);
       background-size: 400% 400%;
       animation: gradientMove 10s ease infinite;
@@ -50,7 +51,7 @@
     }
 
     .profile-img {
-      width: 120px;
+  margin-top: 10px;
       height: 120px;
       border-radius: 50%;
       border: 3px solid #00ff88;
