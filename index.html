@@ -8,7 +8,7 @@
   <!-- Fonte -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- Ícones (Font Awesome) -->
+  <!-- Ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -24,8 +24,16 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: radial-gradient(circle at top, #0f2027, #203a43, #0a0f1c);
+      background: linear-gradient(-45deg, #0f2027, #203a43, #0a0f1c, #1a2f3a);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
       color: #fff;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .container {
@@ -56,10 +64,13 @@
       transform: scale(1.05);
     }
 
+    h1, h2 {
+      text-transform: uppercase;
+    }
+
     h1 {
       font-size: 26px;
       font-weight: 600;
-      text-transform: uppercase;
     }
 
     h2 {
@@ -67,7 +78,6 @@
       font-weight: 300;
       margin-bottom: 10px;
       color: #ccc;
-      text-transform: uppercase;
     }
 
     p {
@@ -77,27 +87,30 @@
     }
 
     .btn {
+      position: relative;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
+      justify-content: flex-start;
+      gap: 12px;
       background: linear-gradient(135deg, #00ff88, #00cc66);
       color: #003322;
       text-decoration: none;
-      padding: 14px;
+      padding: 14px 16px;
       margin: 10px 0;
       border-radius: 12px;
       font-weight: 600;
       text-transform: uppercase;
       box-shadow: 0 8px 20px rgba(0,255,136,0.3);
       transition: 0.3s;
-      backdrop-filter: blur(0px);
+      overflow: hidden;
     }
 
     .btn i {
       font-size: 18px;
+      min-width: 20px;
     }
 
+    /* Efeito vidro + hover */
     .btn:hover {
       background: rgba(255, 255, 255, 0.1);
       color: #fff;
@@ -105,6 +118,28 @@
       backdrop-filter: blur(10px);
       transform: translateY(-3px) scale(1.02);
       box-shadow: 0 12px 25px rgba(0,255,136,0.3);
+    }
+
+    /* Efeito clique */
+    .btn:active {
+      transform: scale(0.97);
+      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    }
+
+    /* Luz passando */
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: 0.5s;
+    }
+
+    .btn:hover::before {
+      left: 100%;
     }
 
     .footer {
@@ -125,19 +160,19 @@
     <p>Soluções contábeis para o seu negócio</p>
 
     <a href="#" class="btn">
-      <i class="fas fa-briefcase"></i> Consultoria Empresarial
+      <i class="fas fa-briefcase"></i> CONSULTORIA EMPRESARIAL
     </a>
 
-    <a href="https://wa.me/5582999284225?text=Ol%C3%A1" class="btn">
-      <i class="fab fa-whatsapp"></i> Meu WhatsApp
+    <a href="https://wa.me/5582999284225" class="btn">
+      <i class="fab fa-whatsapp"></i> MEU WHATSAPP
     </a>
 
     <a href="https://www.instagram.com/contabilsheets" class="btn">
-      <i class="fab fa-instagram"></i> Meu Instagram
+      <i class="fab fa-instagram"></i> MEU INSTAGRAM
     </a>
 
     <a href="https://www.youtube.com/@contabilsheets" class="btn">
-      <i class="fab fa-youtube"></i> Conteúdos e Dicas
+      <i class="fab fa-youtube"></i> CONTEÚDOS E DICAS
     </a>
 
     <div class="footer">© 2026 - Ewerton Renato</div>
