@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ewerton Renato | Contabilidade</title>
 
-  <!-- Fonte correta -->
+  <!-- Fonte -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Ícones (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     * {
@@ -34,14 +37,8 @@
     }
 
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .profile-img {
@@ -62,6 +59,7 @@
     h1 {
       font-size: 26px;
       font-weight: 600;
+      text-transform: uppercase;
     }
 
     h2 {
@@ -69,6 +67,7 @@
       font-weight: 300;
       margin-bottom: 10px;
       color: #ccc;
+      text-transform: uppercase;
     }
 
     p {
@@ -89,13 +88,23 @@
       margin: 10px 0;
       border-radius: 12px;
       font-weight: 600;
+      text-transform: uppercase;
       box-shadow: 0 8px 20px rgba(0,255,136,0.3);
       transition: 0.3s;
+      backdrop-filter: blur(0px);
+    }
+
+    .btn i {
+      font-size: 18px;
     }
 
     .btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 12px 25px rgba(0,255,136,0.6);
+      box-shadow: 0 12px 25px rgba(0,255,136,0.3);
     }
 
     .footer {
@@ -109,25 +118,26 @@
 <body>
   <div class="container">
 
-    <!-- SUA FOTO -->
     <img src="https://yt3.googleusercontent.com/ioNCpb6Bnv0ONnFAwPRjMiyZzqP0988Lx3Wxexnx9VDFrP9rlWF5FMSO6g21qobGqqplpWI-xw=s900-c-k-c0x00ffffff-no-rj" alt="Foto" class="profile-img">
 
     <h1>Ewerton Renato</h1>
     <h2>Contabilidade</h2>
     <p>Soluções contábeis para o seu negócio</p>
 
-    <a href="#" class="btn">💼 Consultoria Empresarial</a>
+    <a href="#" class="btn">
+      <i class="fas fa-briefcase"></i> Consultoria Empresarial
+    </a>
 
-    <a href="https://wa.me/5582999284225?text=Ol%C3%A1%2C%20tudo%20bem%3F%0AGostaria%20de%20obter%20mais%20informacoes%20sobre%20seus%20servicos%20contabeis.%0APoderia%20me%20auxiliar%20por%20gentileza%3F" class="btn">
-      📲 Meu WhatsApp
+    <a href="https://wa.me/5582999284225?text=Ol%C3%A1" class="btn">
+      <i class="fab fa-whatsapp"></i> Meu WhatsApp
     </a>
 
     <a href="https://www.instagram.com/contabilsheets" class="btn">
-      📸 Meu Instagram
+      <i class="fab fa-instagram"></i> Meu Instagram
     </a>
 
     <a href="https://www.youtube.com/@contabilsheets" class="btn">
-      🎥 Conteúdos e Dicas
+      <i class="fab fa-youtube"></i> Conteúdos e Dicas
     </a>
 
     <div class="footer">© 2026 - Ewerton Renato</div>
