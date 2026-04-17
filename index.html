@@ -27,7 +27,7 @@
       color: #fff;
       padding: 30px 15px 40px;
       display: flex;
-      justify-content: center; /* 🔥 centraliza desktop */
+      justify-content: center;
     }
 
     .container {
@@ -50,7 +50,6 @@
     h2 { font-size: 15px; color: #ccc; }
     p { font-size: 13px; color: #aaa; margin-bottom: 20px; }
 
-    /* 🔥 BOTÕES ORIGINAIS (GRADIENTE) */
     .btn {
       position: relative;
       display: flex;
@@ -76,7 +75,6 @@
       transform: scale(1.05);
     }
 
-    /* GRADIENTES */
     .servico {
       background: linear-gradient(135deg, #4facfe, #00c6ff);
     }
@@ -99,7 +97,7 @@
       background: linear-gradient(135deg, #005bea, #00c6fb);
     }
 
-    /* 🎬 ANIMAÇÃO MELHORADA */
+    /* 🎬 ANIMAÇÃO */
     .fade-slide {
       opacity: 0;
       transform: translateY(40px);
@@ -113,7 +111,39 @@
       }
     }
 
-    /* 📱 MOBILE */
+    /* 🎥 VIDEO */
+    .video-box {
+      margin: 20px auto;
+      border-radius: 16px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 320px;
+      aspect-ratio: 9 / 16;
+      box-shadow: 0 0 25px rgba(0,200,255,0.4);
+    }
+
+    #player {
+      width: 100%;
+      height: 100%;
+    }
+
+    .sound-btn {
+      margin-top: 10px;
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #777;
+    }
+
     @media (max-width: 480px) {
       body {
         background-position: center top;
@@ -132,19 +162,74 @@
   <h2 class="fade-slide" style="animation-delay:0.8s;">Ewerton Renato</h2>
   <p class="fade-slide" style="animation-delay:1s;">SOLUÇÕES CONTÁBEIS PARA O SEU NEGÓCIO</p>
 
-  <a href="#" class="btn servico fade-slide" style="animation-delay:1.3s;">CONSULTORIA</a>
-  <a href="#" class="btn servico fade-slide" style="animation-delay:1.5s;">CONTABILIDADE</a>
-  <a href="#" class="btn servico fade-slide" style="animation-delay:1.7s;">MEI</a>
+  <a href="#" class="btn servico fade-slide" style="animation-delay:1.3s;"><i class="fas fa-briefcase"></i>CONSULTORIA</a>
+  <a href="#" class="btn servico fade-slide" style="animation-delay:1.5s;"><i class="fas fa-briefcase"></i>CONTABILIDADE</a>
+  <a href="#" class="btn servico fade-slide" style="animation-delay:1.7s;"><i class="fas fa-briefcase"></i>MEI</a>
 
-  <a href="#" class="btn whatsapp fade-slide" style="animation-delay:1.9s;">WHATSAPP</a>
-  <a href="#" class="btn instagram fade-slide" style="animation-delay:2.1s;">INSTAGRAM</a>
-  <a href="#" class="btn linkedin fade-slide" style="animation-delay:2.3s;">LINKEDIN</a>
-  <a href="#" class="btn youtube fade-slide" style="animation-delay:2.5s;">YOUTUBE</a>
+  <a href="https://wa.me/5582999284225" target="_blank" class="btn whatsapp fade-slide" style="animation-delay:1.9s;">
+    <i class="fab fa-whatsapp"></i>WHATSAPP
+  </a>
 
-  <a href="#" class="btn cpf fade-slide" style="animation-delay:2.7s;">CONSULTAR CPF</a>
-  <a href="#" class="btn cnpj fade-slide" style="animation-delay:2.9s;">CONSULTAR CNPJ</a>
+  <a href="https://www.instagram.com/contabilsheets/" target="_blank" class="btn instagram fade-slide" style="animation-delay:2.1s;">
+    <i class="fab fa-instagram"></i>INSTAGRAM
+  </a>
+
+  <a href="https://www.linkedin.com/in/ewerton-renato-67032753/" target="_blank" class="btn linkedin fade-slide" style="animation-delay:2.3s;">
+    <i class="fab fa-linkedin"></i>LINKEDIN
+  </a>
+
+  <a href="https://www.youtube.com/@contabilsheets" target="_blank" class="btn youtube fade-slide" style="animation-delay:2.5s;">
+    <i class="fab fa-youtube"></i>YOUTUBE
+  </a>
+
+  <a href="https://servicos.receita.fazenda.gov.br/servicos/cpf/consultasituacao/consultapublica.asp" target="_blank" class="btn cpf fade-slide" style="animation-delay:2.7s;">
+    <i class="fas fa-id-card"></i>CONSULTAR CPF
+  </a>
+
+  <a href="https://solucoes.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp" target="_blank" class="btn cnpj fade-slide" style="animation-delay:2.9s;">
+    <i class="fas fa-building"></i>CONSULTAR CNPJ
+  </a>
+
+  <div class="video-box fade-slide" style="animation-delay:3.1s;">
+    <div id="player"></div>
+  </div>
+
+  <button class="sound-btn fade-slide" onclick="ativarSom()" style="animation-delay:3.3s;">
+    🔊 ATIVAR SOM
+  </button>
+
+  <div class="footer fade-slide" style="animation-delay:3.5s;">© 2026</div>
 
 </div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script>
+let player;
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    playerVars: {
+      listType: 'playlist',
+      list: 'PLQkSthvg_zWsyjumuzr4V7MYkDDQaYqMR',
+      autoplay: 1,
+      mute: 1,
+      controls: 0,
+      loop: 1,
+      playlist: 'PLQkSthvg_zWsyjumuzr4V7MYkDDQaYqMR'
+    },
+    events: {
+      onReady: function(e) {
+        e.target.playVideo();
+      }
+    }
+  });
+}
+
+function ativarSom() {
+  if (player) player.unMute();
+}
+</script>
 
 </body>
 </html>
