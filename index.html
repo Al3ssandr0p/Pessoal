@@ -18,23 +18,22 @@
 
     body {
       min-height: 100vh;
-      background: linear-gradient(-45deg, #0f2027, #203a43, #0a0f1c, #1a2f3a);
-      background-size: 400% 400%;
-      animation: gradientMove 8s ease infinite;
+      background: 
+        linear-gradient(to right, rgba(10,15,28,0.9) 40%, rgba(10,15,28,0.2)),
+        url("https://static.wixstatic.com/media/bee928_b3673509f58a4bf9838569a9485d2c96~mv2.gif");
+      
+      background-size: cover;
+      background-position: right center;
+      background-repeat: no-repeat;
       color: #fff;
       padding: 30px 15px 40px;
-    }
-
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
     }
 
     .container {
       max-width: 380px;
       margin: auto;
       text-align: center;
+      backdrop-filter: blur(6px);
     }
 
     .profile-img {
@@ -165,7 +164,6 @@
 
 <div class="container">
 
-  <!-- ✅ SUA IMAGEM CORRIGIDA -->
   <img src="https://i.imgur.com/oT7g5CR.jpeg" class="profile-img">
 
   <h1>CONTÁBIL SHEETS</h1>
